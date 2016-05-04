@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(formularz) }}
+    {{ form_widget(formularz) }}
+    {{ form_end(formularz) }}
+
+    {{ok}}
+{% endblock %}

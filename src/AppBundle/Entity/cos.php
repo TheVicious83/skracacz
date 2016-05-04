@@ -45,7 +45,7 @@ class cos
     /**
      * @var bool
      *
-     * @ORM\Column(name="islubi", type="boolean")
+     * @ORM\Column(name="islubi", type="boolean", nullable=true)
      */
     private $islubi;
 
