@@ -20,17 +20,6 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         $cos = new cos();
-        return $this->render('AppBundle:stronaglowna.html.twig', [
-            'formularz' => $form
-        ]);
-    }
-
-    /**
-     * @Route("/dodaj", name="dodajcosia")
-     */
-    public function dodajcosiaAction(Request $request)
-    {
-        $cos = new cos();
         $form = $this->createFormBuilder($cos)
         ->add('imie', TextType::class)
         ->add('wzrost', IntegerType::class)
@@ -55,7 +44,7 @@ class DefaultController extends Controller
             $ok = 'OKI, stworzylem obiekt';
         }
 
-        return $this->render('AppBundle:stronaglowna.html.twig', [
+        return $this->render('default/new.html.twig', [
             'formularz' => $form->createView(),
             'ok' => $ok
         ]);
