@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\cos;
+use Doctrine\DBAL\Types\StringType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,22 +22,15 @@ class DefaultController extends Controller
     {
         $cos = new cos();
         $form = $this->createFormBuilder($cos)
-        ->add('imie', TextType::class)
-        ->add('wzrost', IntegerType::class)
-        ->add('ispedal', CheckboxType::class)
-        ->add('zapisz', SubmitType::class, array('label' => 'Dodaj cosia'))
+        ->add('url', TextType::class)
+        ->add('zapisz', SubmitType::class, array('label' => 'Dodaj link'))
         ->getForm();
 
         $form->handleRequest($request);
         $ok = "Jeszcze nie dodalem obiektu";
 
         if ($form->isSubmitted()) {
-            $imie = $form->get('imie')->getData();
-            $wzrost = $form->get('wzrost')->getData();
-            $ispedal = $form->get('ispedal')->getData();
-            $cos->setImie($imie);
-            $cos->setWzrost($wzrost);
-            $cos->setIspedal($ispedal);
+            $url = $form->get('url')->getData();
             $db = $this->getDoctrine()->getManager();
             $db->persist($cos);
             $db->flush();

@@ -24,31 +24,9 @@ class cos
     /**
      * @var string
      *
-     * @ORM\Column(name="imie", type="string", length=255)
+     * @ORM\Column(name="url", type="string", length=255)
      */
-    private $imie;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="wzrost", type="integer")
-     */
-    private $wzrost;
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="ispedal", type="boolean")
-     */
-    private $ispedal;
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="islubi", type="boolean", nullable=true)
-     */
-    private $islubi;
-
+    private $url;
 
     /**
      * Get id
@@ -63,92 +41,27 @@ class cos
     }
 
     /**
-     * Set imie
+     * Set url
      *
-     * @param string $imie
+     * @param string $url
      *
      * @return cos
      */
-    public function setImie($imie)
+    public function seturl($url)
     {
-        $this->imie = $imie;
+        $this->url = $url;
 
         return $this;
     }
 
     /**
-     * Get imie
+     * Get url
      *
      * @return string
      */
-    public function getImie()
+    public function geturl()
     {
-        return $this->imie;
+        return $this->url;
     }
-
-    /**
-     * Set wzrost
-     *
-     * @param integer $wzrost
-     *
-     * @return cos
-     */
-    public function setWzrost($wzrost)
-    {
-        $this->wzrost = $wzrost;
-
-        return $this;
-    }
-
-    /**
-     * Get wzrost
-     *
-     * @return int
-     */
-    public function getWzrost()
-    {
-        return $this->wzrost;
-    }
-
-    /**
-     * Set ispedal
-     *
-     * @param boolean $ispedal
-     *
-     * @return cos
-     */
-    public function setIspedal($ispedal)
-    {
-        $this->ispedal = $ispedal;
-
-        return $this;
-    }
-
-    /**
-     * Get ispedal
-     *
-     * @return bool
-     */
-    public function getIspedal()
-    {
-        return $this->ispedal;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIslubi()
-    {
-        return $this->islubi;
-    }
-
-    /**
-     * @param mixed $islubi
-     */
-    public function setIslubi($islubi)
-    {
-        $this->islubi = $islubi;
-    }
-
 }
 

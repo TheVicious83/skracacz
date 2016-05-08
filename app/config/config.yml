@@ -37,6 +37,10 @@ twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
 
+mopa_bootstrap:
+    form: ~  # Adds twig form theme  support
+
+
 # Doctrine Configuration
 doctrine:
     dbal:
@@ -66,3 +70,10 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+assetic:
+    filters:
+        less:
+            node: /usr/bin/node
+            node_paths: [/usr/lib/node_modules]
+            apply_to: "\\.less$"
