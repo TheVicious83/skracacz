@@ -1,10 +1,5 @@
 {% block head_style %}
-{% stylesheets
-   '@MopaBootstrapBundle/Resources/public/bootstrap/bootstrap.css'
-%}
-<link href="{{ asset_url }}" type="text/css" rel="stylesheet"
-   media="screen" />
-{% endstylesheets %}
+    <link href="{{ asset('css/bab9907_mopabootstrapbundle_1.css') }}" type="text/css" rel="stylesheet" media="screen" />
 {% endblock %}
 
 {% block body %}
@@ -14,35 +9,36 @@
     {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="http://vps258460.ovh.net/">Strona Główna</a>
-        </div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://vps258460.ovh.net/">Strona Główna</a>
+            </div>
 
-        <ul class="nav navbar-nav navbar-right">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="http://vps258460.ovh.net/pomoc">Pomoc</a>
+            <ul class="nav navbar-nav navbar-right">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="http://vps258460.ovh.net/pomoc">Pomoc</a>
+                    </div>
                 </div>
             </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-    {{ form_start(formularz) }}
-    {{ form_widget(formularz) }}
-    {{ form_end(formularz) }}
+        </div><!-- /.container-fluid -->
+        {{ form_start(formularz) }}
+        {{ form_widget(formularz) }}
+        {{ form_end(formularz) }}
+    </nav>
 {% endblock %}
