@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="26994faf-3a17-46d9-a57f-be33a252c6e2" name="Skracacz" url="http://skracacz.dev">
+        <fileTransfer host="46.101.182.173" port="22" rootFolder="/var/www/html/skracacz" accessType="SFTP" password="dfc7dfcbdfc9dfc3dfcfdfc1dfcddfc4dfc3dfcfdfc9dfc3dfcf" username="vicious">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

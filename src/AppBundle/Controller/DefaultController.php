@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\cos;
+use AppBundle\Entity\cutter;
 use Doctrine\DBAL\Types\StringType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -20,8 +21,8 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $cos = new cos();
-        $form = $this->createFormBuilder($cos)
+        $cutter = new cutter();
+        $form = $this->createFormBuilder($cutter)
         ->add('url', TextType::class)
         ->add('zapisz', SubmitType::class, array('label' => 'Dodaj link'))
         ->getForm();
@@ -32,7 +33,7 @@ class DefaultController extends Controller
         if ($form->isSubmitted()) {
             $url = $form->get('url')->getData();
             $db = $this->getDoctrine()->getManager();
-            $db->persist($cos);
+            $db->persist($cutter);
             $db->flush();
 
             $ok = 'OKI, stworzylem obiekt';
