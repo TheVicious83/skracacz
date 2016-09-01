@@ -29,6 +29,13 @@ class cutter
     private $url;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="prefix", type="string", length=255)
+     */
+     private $prefix;
+
+    /**
      * Get id
      *
      * @return int
@@ -45,7 +52,7 @@ class cutter
      *
      * @param string $url
      *
-     * @return cos
+     * @return cutter
      */
     public function seturl($url)
     {
@@ -62,5 +69,31 @@ class cutter
     public function geturl()
     {
         return $this->url;
+
     }
+
+    /**
+     * Set prefix
+     *
+     * @param string $prefix
+     *
+     * @return cutter
+     */
+    public function setprefix($prefix)
+    {
+        $this->prefix = $prefix;
+
+        return $this;
+    }
+
+    /**
+     * Get prefix
+     *
+     * @return string
+     */
+    public function getprefix()
+    {
+        return $this->prefix;
+    }
+
 }

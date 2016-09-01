@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="26994faf-3a17-46d9-a57f-be33a252c6e2" name="Skracacz" url="http://skracacz.dev">
-        <fileTransfer host="46.101.182.173" port="22" rootFolder="/var/www/html/skracacz" accessType="SFTP" password="dfc7dfcbdfc9dfc3dfcfdfc1dfcddfc4dfc3dfcfdfc9dfc3dfcf" username="vicious">
+        <fileTransfer host="138.68.70.45" port="22" rootFolder="/home/vicious/skracacz" accessType="SFTP" password="dfdadfc3dfdddfc4dfc3dfc9dfd0dfcbdfc4dfc3dfc4" username="vicious">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

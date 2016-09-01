@@ -12,6 +12,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
 
 
 class DefaultController extends Controller
@@ -24,6 +26,7 @@ class DefaultController extends Controller
         $cutter = new cutter();
         $form = $this->createFormBuilder($cutter)
         ->add('url', TextType::class)
+        ->add('prefix', TextType::class)
         ->add('zapisz', SubmitType::class, array('label' => 'Dodaj link'))
         ->getForm();
 
@@ -35,13 +38,37 @@ class DefaultController extends Controller
             $db = $this->getDoctrine()->getManager();
             $db->persist($cutter);
             $db->flush();
-
+            $prefix = $form->get('prefix')->getData();
+            $db = $this->getDoctrine()->getManager();
+            $db->persist($cutter);
+            $db->flush();
             $ok = 'OKI, stworzylem obiekt';
+
         }
 
         return $this->render('default/new.html.twig', [
             'formularz' => $form->createView(),
             'ok' => $ok
         ]);
+    }
+    /**
+     *
+     * @Route("/d/{urlprefix}", name="cutter redirect")
+     */
+    public function showAction($urlprefix)
+    {
+        $pref = $this->getDoctrine()
+            ->getRepository('AppBundle:cutter')
+            ->findOneBy(array('prefix' => $urlprefix));
+
+        $url = $pref->geturl();
+        if ($pref<>null)
+        {
+        header("Location: //$url");
+        }
+        else
+        {echo ('Nie ma takiej strony');}
+        return exit();
+
     }
 }
