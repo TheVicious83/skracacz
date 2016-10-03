@@ -25,7 +25,7 @@ class DefaultController extends Controller
     {
         $cutter = new cutter();
         $form = $this->createFormBuilder($cutter)
-        ->add('url', TextType::class)
+        ->add('url', TextType::class, array('label' =>'Wpisz adres WWW'))
         ->add('prefix', TextType::class)
         ->add('zapisz', SubmitType::class, array('label' => 'Dodaj link'))
         ->getForm();
@@ -43,9 +43,7 @@ class DefaultController extends Controller
             $db->persist($cutter);
             $db->flush();
             $ok = 'OKI, stworzylem obiekt';
-
         }
-
         return $this->render('default/new.html.twig', [
             'formularz' => $form->createView(),
             'ok' => $ok
@@ -61,13 +59,15 @@ class DefaultController extends Controller
             ->getRepository('AppBundle:cutter')
             ->findOneBy(array('prefix' => $urlprefix));
 
-        $url = $pref->geturl();
+
         if ($pref<>null)
         {
+        $url = $pref->geturl();
         header("Location: //$url");
         }
         else
-        {echo ('Nie ma takiej strony');}
+        {echo ('Nie ma takiej strony skracacz.dev/d/');
+        echo ($urlprefix);}
         return exit();
 
     }

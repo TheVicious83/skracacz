@@ -1,0 +1,42 @@
+{% block head_style %}
+    <link href="{{ asset('css/bab9907_mopabootstrapbundle_1.css') }}" type="text/css" rel="stylesheet" media="screen" />
+{% endblock %}
+
+{% block body %}
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Skracacz adresów internetowych{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://138.68.70.45/">Strona Główna</a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="http://138.68.70.45/pomoc">Pomoc</a>
+                    </div>
+                </div>
+            </ul>
+        </div><!-- /.container-fluid -->
+        Przekierowało
+    </nav>
+{% endblock %}
